@@ -1,0 +1,9 @@
+<svg width="147" height="147" viewBox="0 0 147 147" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="73.5" cy="73.5" r="73.5" fill="#4AD395"/>
+<rect x="37" y="73" width="73" height="15" fill="#999999"/>
+<rect x="41" y="77" width="66" height="8" fill="#111111"/>
+<rect x="81" y="41" width="29" height="14" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M55.8287 144.886L43.8872 78.0134H104.464L123.288 127.427C110.194 139.574 92.659 147 73.39 147C67.3371 147 61.4554 146.267 55.8287 144.886Z" fill="black" fill-opacity="0.25"/>
+<path d="M44.3 78H102.7L110 122H37L44.3 78Z" fill="white"/>
+<ellipse cx="51.5" cy="48" rx="14.5" ry="15" fill="white"/>
+</svg>

@@ -1,0 +1,6 @@
+...
+yo
+..
+GEN ON 
+GEN OFF
+BATTERY LEVEL

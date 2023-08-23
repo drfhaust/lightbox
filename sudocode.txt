@@ -1,0 +1,129 @@
+Declare variables
+#Master 
+#Gen 
+#Inverter
+#GenTurnOnCheck (To disable generator automatic turn on, input should come from the mobile app)
+
+
+startup-
+disable all relays, 
+check voltages (display them) 
+if above 255 /<130 &>30 display triangle in front of faulty one and sound buzzer  
+if button pressed for 3 seconds bypass fault mode(disable buzzer and allow connection to that output)
+check if in auto or manual mode   
+
+
+ If auto mode==true{
+check voltages
+ if master==normal && gen==on
+Turn off gen relay
+Send off command to gen
+
+If master==off & gen =off & inv==off
+Atmega 328 sends “gen on” over serial to the esp8266
+The esp8266 connect to the prenamed wifi and, 
+Send “gen on” to client to turn on generator, 
+Wait for 30 seconds to repeat.
+
+
+If more than 5 retries stop
+
+If master==off & gen =off & inv==on
+Use inverter
+
+ if master==normal
+Turn on master relay
+Turn off others
+
+ if master==normal && inv=on
+Turn off inv rel turn on master
+If inv==on }
+
+
+
+
+
+
+
+
+Master - 0, gen - 0, inv - 0 (Turn on gen)
+Master - 1, gen - 1, inv - 1 (Turn off gen, Switch to Master, Turn off Inv)
+
+Master - 1, gen - 0, inv - 0 ( Switch to Master)
+Master - 1, gen - 1, inv - 0 ( Switch to Master, Turn of gen)
+
+Master - 0, gen - 1, inv - 0 (Turn off Master, Switch to Gen, Turn off Inv )
+Master - 1, gen - 1, inv - 0 (Turn off gen, Switch to Master, Turn off Inv)
+
+Master - 0, gen - 0, inv - 1 (Turn off gen, Turn off Master, Turn on Inv)
+Master - 0, gen - 1, inv - 1 (Turn off gen, Turn off Master, Turn on Inv)
+
+
+Manual mode
+
+On master by default
+Store current mode in eeprom
+
+If relay toggle (changeover button) button ==low for 3 seconds, 
+Display current mode count to 10
+If relay toggle button (changeover button) ==low
+Display next mode  reset count variable and count to 10
+If relay toggle button (changeover button) == low
+Display next mode , reset count variable count to 10
+If count>10 choose current mode
+
+
+
+Display (Current voltage source takes majority of the screen)
+
+Display mode
+Display current
+Display the current voltage source
+Display voltages of the 3 inputs
+Display battery voltage
+
+
+
+
+
+
+
+
+
+
+
+Generator board
+
+Turns on checks the presence of ac 
+Connect to wifi
+
+Fnxn gen startup
+Make servo turn choke, turn on first stage relay, 
+Turn on the 2nd stage relay for 3 seconds.
+Wait for 10 seconds 
+Turn off choke
+Check for ac
+If ac==false, turn off relay1 and repeat
+If ac ==true, leave stage 1 relay on
+
+Fnxn gen off
+Turn off stage 1 relay
+
+If manual button is pressed and held for 3 seconds
+ Check ac presence
+If ac==false
+Run gen startup protocol once
+
+
+If ac==true
+Turn off generator
+
+
+If “gen on” received over wifi, 
+run genstartup fnxn with 5 retries
+If fails send “failed” to changeover
+
+If bat<2.8 turn on  the power relay
+Send “low battery over wifi
+Else power relay==off
+
