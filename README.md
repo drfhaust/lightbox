@@ -19,7 +19,7 @@ This project is designed to create an intelligent power management system capabl
 ### Parameters Measured
 
 - **Voltage**: Measuring the ac voltage level of each power source to determine availability and stability.
-- **Current**: Monitoring the current draw for load calculations and to detect potential overloads.
+- **Current**: Monitoring the current draw for load calculations and detecting potential overloads.
 - **Power**: Calculating power consumption for energy monitoring and management.
 
 ### Controlled Inputs
@@ -39,5 +39,3 @@ This project is designed to create an intelligent power management system capabl
 The system includes logic to detect faults in each power source, such as under-voltage, over-voltage, or overload conditions. It can switch off a faulty power source to protect the loads and switch to an alternate power source if available.
 
 ---
-
-This overview provides a concise yet comprehensive description of the project, suitable for the README file on a GitHub repository. Additional sections can be added to the README for detailed setup instructions, usage examples, contribution guidelines, and license information.
