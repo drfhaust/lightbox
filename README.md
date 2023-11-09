@@ -1,8 +1,6 @@
 
 # lightbox
 https://github.com/drfhaust/lightbox
-Based on the information extracted from the `.ino` files, here is a draft overview for the README that describes the project, its components, parameters measured, and controlled inputs:
-
 
 This project is designed to create an intelligent power management system capable of handling multiple power sources, including mains electricity (NEPA), an inverter, and a generator. It aims to automate the process of switching between these power sources based on availability and predefined criteria, as well as to provide remote monitoring and control capabilities.
 
@@ -20,7 +18,7 @@ This project is designed to create an intelligent power management system capabl
 
 ### Parameters Measured
 
-- **Voltage**: Measuring the voltage level of each power source to determine availability and stability.
+- **Voltage**: Measuring the ac voltage level of each power source to determine availability and stability.
 - **Current**: Monitoring the current draw for load calculations and to detect potential overloads.
 - **Power**: Calculating power consumption for energy monitoring and management.
 
